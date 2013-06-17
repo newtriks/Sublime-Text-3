@@ -10,3 +10,4 @@ Icon?
 .Trashes
 
 *.sublime_license
+/Packages/User/Package Control.last-run
