@@ -20,3 +20,4 @@ From then on, any pref changes or updates to packages can then be committed to a
 * [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview/tree/ST3)
 * [JsFormat](https://github.com/jdc0589/JsFormat)
 * [Emmet](http://docs.emmet.io/)
+* [DashDoc](https://github.com/farcaller/DashDoc)
