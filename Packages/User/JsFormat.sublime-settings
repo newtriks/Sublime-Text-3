@@ -1,0 +1,7 @@
+{
+	// exposed jsbeautifier options
+	"jslint_happy": true,
+
+	// jsformat options
+	"format_on_save": true
+}

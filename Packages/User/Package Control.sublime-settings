@@ -1,6 +1,7 @@
 {
 	"installed_packages":
 	[
+		"DashDoc",
 		"Emmet",
 		"JsFormat",
 		"Package Control"
