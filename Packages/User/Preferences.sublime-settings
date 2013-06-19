@@ -1,6 +1,7 @@
 {
-	"ignored_packages":
-	[
-		"Vintage"
+	"font_size": 12,
+	"draw_white_space": "all",
+	"ignored_packages": [
+			"Vintage"
 	]
 }

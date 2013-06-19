@@ -21,3 +21,4 @@ From then on, any pref changes or updates to packages can then be committed to a
 * [JsFormat](https://github.com/jdc0589/JsFormat)
 * [Emmet](http://docs.emmet.io/)
 * [DashDoc](https://github.com/farcaller/DashDoc)
+* [EditorConfig](https://github.com/sindresorhus/editorconfig-sublime)
