@@ -1,8 +1,10 @@
 {
 	"installed_packages":
 	[
+		"BeautifyRuby",
 		"DashDoc",
 		"Emmet",
+		"HTML-CSS-JS Prettify",
 		"JsFormat",
 		"Package Control"
 	]

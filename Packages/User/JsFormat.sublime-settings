@@ -3,5 +3,5 @@
 	"jslint_happy": true,
 
 	// jsformat options
-	"format_on_save": true
+	"format_on_save": false
 }
