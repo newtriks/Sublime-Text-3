@@ -1,11 +1,14 @@
 {
+	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
 		"BeautifyRuby",
 		"DashDoc",
+		"EditorConfig",
 		"Emmet",
 		"JsFormat",
-		"MacTerminal",
-		"Package Control"
+		"LESS",
+		"Package Control",
+		"Terminal"
 	]
 }
