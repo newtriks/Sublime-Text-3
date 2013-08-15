@@ -22,4 +22,4 @@ From then on, any pref changes or updates to packages can then be committed to a
 * [Emmet](http://docs.emmet.io/)
 * [DashDoc](https://github.com/farcaller/DashDoc)
 * [EditorConfig](https://github.com/sindresorhus/editorconfig-sublime)
-* [MacTerminal](https://github.com/afterdesign/MacTerminal)
+* [Terminal](http://wbond.net/sublime_packages/terminal)
