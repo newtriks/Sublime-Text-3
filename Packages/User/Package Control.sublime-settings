@@ -2,13 +2,21 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
-		"BeautifyRuby",
+		"AdvancedNewFile",
+		"Base16 Color Schemes",
 		"DashDoc",
 		"EditorConfig",
 		"Emmet",
+		"Glue",
+		"HTML-CSS-JS Prettify",
+		"JavaScript & NodeJS Snippets",
 		"JsFormat",
 		"LESS",
 		"Package Control",
-		"Terminal"
+		"SideBarEnhancements",
+		"Stylus",
+		"Terminal",
+		"Theme - Spacegray",
+		"View In Browser"
 	]
 }
