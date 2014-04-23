@@ -13,13 +13,3 @@ Symlink Packages/Installed Packages:
 * `ln -s /Users/newtriks/src/sublime-text-3/Packages Packages`
 
 From then on, any pref changes or updates to packages can then be committed to a central repos.
-
-### Package List
-* [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter/tree/sublime-text-3)
-* [Git](https://github.com/kemayo/sublime-text-2-git/tree/python3)
-* [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview/tree/ST3)
-* [JsFormat](https://github.com/jdc0589/JsFormat)
-* [Emmet](http://docs.emmet.io/)
-* [DashDoc](https://github.com/farcaller/DashDoc)
-* [EditorConfig](https://github.com/sindresorhus/editorconfig-sublime)
-* [Terminal](http://wbond.net/sublime_packages/terminal)
