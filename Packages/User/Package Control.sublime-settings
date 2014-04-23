@@ -8,6 +8,7 @@
 		"DashDoc",
 		"EditorConfig",
 		"Emmet",
+		"Git",
 		"Glue",
 		"HTML-CSS-JS Prettify",
 		"JavaScript & NodeJS Snippets",
@@ -16,6 +17,7 @@
 		"Package Control",
 		"SideBarEnhancements",
 		"Stylus",
+		"SublimeLinter",
 		"Terminal",
 		"Theme - Spacegray",
 		"View In Browser"

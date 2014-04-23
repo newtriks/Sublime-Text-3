@@ -66,6 +66,9 @@
   var sourceParent = path.dirname(sourceFolder);
   var jsbeautifyrcPath;
 
+  // Older versions of node has `existsSync` in the path module, not fs. Meh.
+  fs.existsSync = fs.existsSync || path.existsSync;
+
   // Try and get some persistent options from the plugin folder.
   if (fs.existsSync(jsbeautifyrcPath = pluginFolder + path.sep + jsbeautifyrc)) {
     setOptions(jsbeautifyrcPath, options);
@@ -91,12 +94,14 @@
     return path.match(/\.html?$/) ||
       path.match(/\.xhtml?$/) ||
       path.match(/\.xml$/) ||
+      path.match(/\.html\.erb$/) ||
       (path == "?" && data.match(/^\s*</)); // First non-whitespace character is &lt;
   }
 
   function isCSS(path, data) {
     return path.match(/\.css$/) ||
       path.match(/\.sass$/) ||
+      path.match(/\.scss$/) ||
       path.match(/\.less$/);
   }
 
