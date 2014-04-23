@@ -13,3 +13,7 @@ Symlink Packages/Installed Packages:
 * `ln -s /Users/newtriks/src/sublime-text-3/Packages Packages`
 
 From then on, any pref changes or updates to packages can then be committed to a central repos.
+
+### Font
+
+[Source Code Pro](https://github.com/adobe/Source-Code-Pro)
