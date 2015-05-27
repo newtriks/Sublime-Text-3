@@ -1,11 +1,9 @@
-begin
-  require 'rspec'
-rescue LoadError
-  require 'rubygems'
-  require 'rspec'
+unless ENV['CI'] == true
+  require 'pry'
 end
+
 require 'yaml'
-require File.dirname(__FILE__) + '/../lib/rbeautify.rb'
+require_relative './../lib/rbeautify.rb'
 
 module RBeautifyMatchers
   # Adds more descriptive failure messages to the dynamic be_valid matcher
@@ -13,9 +11,9 @@ module RBeautifyMatchers
     def initialize(block_matcher_name, offset, match, after_match)
       # triggers the standard Spec::Matchers::Be magic, as if the original Spec::Matchers#method_missing had fired
       @block_matcher_name = block_matcher_name
-      @offset = offset
-      @match = match
-      @after_match = after_match
+      @offset             = offset
+      @match              = match
+      @after_match        = after_match
     end
 
     def matches?(target_block)
@@ -28,7 +26,7 @@ module RBeautifyMatchers
       "expected\n#{expected_string} but got\n#{got_string}"
     end
 
-    def negative_failure_message
+    def failure_message_when_negated
       "expected to be different from #{expected_string}"
     end
 
@@ -63,7 +61,7 @@ module RBeautifyMatchers
       "expected\n#{expected_string} but got\n#{got_string}"
     end
 
-    def negative_failure_message
+    def failure_message_when_negated
       "expected to be different from #{expected_string}"
     end
 
@@ -98,24 +96,33 @@ RSpec.configure do |config|
   config.include(RBeautifyMatchers)
 end
 
-
 def run_fixtures_for_language(language)
   fixtures = YAML.load_file(File.dirname(__FILE__) + "/fixtures/#{language}.yml")
 
   describe language do
+    let(:config) do
+      {
+        'tab_size' => 2,
+        'translate_tabs_to_spaces' => 'true'
+      }
+    end
+
     fixtures.each do |fixture|
       it "should #{fixture['name']}" do
-        input = fixture['input']
+        input  = fixture['input']
         output = fixture['output'] || input
-        debug = fixture['debug'] || false
+        debug  = fixture['debug'] || false
+
+        config['tab_size'] = fixture.fetch('spaces', 2)
 
         if fixture['pending']
+          next
           pending fixture['pending'] do
-            RBeautify.beautify_string(language, input).should == output
+            expect(RBeautify.beautify_string(language, input, config)).to eq(output)
           end
         else
           RBeautify::BlockMatcher.debug = debug
-          RBeautify.beautify_string(language, input).should == output
+          expect(RBeautify.beautify_string(language, input, config)).to eq(output)
         end
       end
     end

@@ -1,3 +1,7 @@
 [
-	{ "keys": ["super+alt+t"], "command": "reopen_last_file" }
+	{ "keys": ["super+ctrl+0"], "command": "reset_font_size" },
+	{ "keys": ["super+alt+t"], "command": "reopen_last_file" },
+	{ "keys": ["alt+ctrl+o"], "command": "view_in_browser" },
+	{ "keys": ["ctrl+shift+,"], "command": "insert_snippet", "args": { "name": "Packages/user/wrap.sublime-snippet" } },
+	{ "keys": ["super+alt+tab"], "command": "expand_abbreviation_by_tab", "context": [{ "operand": "source.js", "operator": "equal", "match_all": true, "key": "selector" }] }
 ]

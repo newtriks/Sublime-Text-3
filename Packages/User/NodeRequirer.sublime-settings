@@ -1,0 +1,4 @@
+{
+    // Use ES6 import format, when syntactically correct
+    "import": true
+}

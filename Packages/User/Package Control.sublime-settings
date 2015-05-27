@@ -1,25 +1,41 @@
 {
 	"auto_upgrade_last_run": null,
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"AdvancedNewFile",
+		"Babel",
 		"Base16 Color Schemes",
 		"BeautifyRuby",
+		"BracketHighlighter",
 		"DashDoc",
 		"EditorConfig",
 		"Emmet",
+		"FindKeyConflicts",
 		"Git",
 		"Glue",
 		"HTML-CSS-JS Prettify",
+		"Jade",
+		"Jasmine JS",
 		"JavaScript & NodeJS Snippets",
 		"JsFormat",
 		"LESS",
+		"Markdown Preview",
+		"NodeRequirer",
+		"Oceanic Next Color Scheme",
 		"Package Control",
+		"PackageResourceViewer",
+		"Sass",
+		"SassBeautify",
 		"SideBarEnhancements",
 		"Stylus",
 		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"SublimeREPL",
 		"Terminal",
 		"Theme - Spacegray",
-		"View In Browser"
+		"TodoReview"
 	]
 }

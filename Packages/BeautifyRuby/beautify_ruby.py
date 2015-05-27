@@ -11,6 +11,8 @@ class BeautifyRubyOnSave(sublime_plugin.EventListener):
 class BeautifyRubyCommand(sublime_plugin.TextCommand):
   def run(self, edit, error=True, save=True):
     self.load_settings()
+    self.view.settings().set('translate_tabs_to_spaces', self.settings.get('translate_tabs_to_spaces'))
+    self.view.settings().set('tab_size', self.settings.get('tab_size'))
     self.filename = self.view.file_name()
     self.fname = os.path.basename(self.filename)
     self.erb = self.is_erb_file()
@@ -33,8 +35,9 @@ class BeautifyRubyCommand(sublime_plugin.TextCommand):
       return
     self.save_viewport_state()
     beautified_buffer = self.pipe(self.cmd(), buffer_text)
-    self.check_valid_output(beautified_buffer)
-    self.view.replace(edit, buffer_region, beautified_buffer)
+    fix_lines = beautified_buffer.replace(os.linesep,'\n')
+    self.check_valid_output(fix_lines)
+    self.view.replace(edit, buffer_region, fix_lines)
     self.reset_viewport_state()
 
   def check_valid_output(self, text):
@@ -47,14 +50,16 @@ class BeautifyRubyCommand(sublime_plugin.TextCommand):
       script_name = 'erbbeautify.rb'
     else:
       script_name = 'rbeautify.rb'
-    ruby_interpreter = self.settings.get('ruby') or "/usr/bin/env ruby"
-    ruby_script  = os.path.join(sublime.packages_path(), 'BeautifyRuby', 'lib', script_name)
+
+    ruby_interpreter = self.settings.get('ruby') or self.which('ruby.exe') or self.which('ruby')
+    ruby_script = os.path.join(sublime.packages_path(), 'BeautifyRuby', 'lib', script_name)
+
     if not os.path.exists(ruby_script):
       msg = "script: '" + ruby_script + "' not found."
       raise Exception(msg)
-    args = ["'" + str(path) + "'"]
-    if self.settings.get('tab_or_space') != "space":
-      args.insert(0, '-t')
+
+    args = ["'" + str(path) + "'"] + self.config_params()
+
     return ruby_interpreter + " '" + ruby_script + "' " + ' '.join(args)
 
   def finalize_output(self, text):
@@ -63,6 +68,16 @@ class BeautifyRubyCommand(sublime_plugin.TextCommand):
     if self.view.settings().get("ensure_newline_at_eof_on_save") and not text.endswith("\n"):
       text += "\n"
     return finalized_output
+
+  def config_params(self):
+    def create_parameter(name):
+      return ['--'+name.replace('_','-'), str(self.view.settings().get(name)) ]
+
+    result = []
+    targets = ["tab_size","translate_tabs_to_spaces",'default_line_ending']
+    for target in targets:
+      result += create_parameter(target)
+    return result
 
   def load_settings(self):
     self.settings = sublime.load_settings('BeautifyRuby.sublime-settings')
@@ -95,3 +110,22 @@ class BeautifyRubyCommand(sublime_plugin.TextCommand):
     beautifier = subprocess.Popen(cmd, shell=True, cwd=cwd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     out = beautifier.communicate(text.encode("utf-8"))[0]
     return out.decode('utf8')
+
+  # http://stackoverflow.com/questions/377017/test-if-executable-exists-in-python/377028#377028
+  def which(self,program):
+    import os
+    def is_exe(fpath):
+        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+    fpath, fname = os.path.split(program)
+    if fpath:
+        if is_exe(program):
+            return program
+    else:
+        for path in os.environ["PATH"].split(os.pathsep):
+            path = path.strip('"')
+            exe_file = os.path.join(path, program)
+            if is_exe(exe_file):
+                return exe_file
+
+    return None

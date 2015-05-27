@@ -1,14 +1,16 @@
 {
-	"color_scheme": "Packages/User/base16-ocean.dark (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/base16-twilight.dark (SL).tmTheme",
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_white_space": "all",
 	"font_face": "Source Code Pro",
-	"font_size": 14,
+	// "font_size": 15,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"theme": "Spacegray.sublime-theme",
-	"trim_trailing_white_space_on_save": true
+	"show_full_path": true,
+	"trim_trailing_white_space_on_save": true,
+	"preview_on_click": true,
+	"binary_file_patterns": ["*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip", ".bowerrc", "bower_components/*", "dist/*", "build/*", ".sass-cache/*"],
 }

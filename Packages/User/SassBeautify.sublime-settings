@@ -1,7 +1,18 @@
 {
-	"indent": 4,
-	"dasherize": false,
-	"old": false,
-	"path": "/opt/rubies/ruby-1.9.3-p448/bin/ruby",
-	"blanklineBetweenSelectors": false
+  // How many spaces to use for each level of indentation. "t" means use hard tabs.
+  "indent": 4,
+  // Convert underscores to dashes.
+  "dasherize": false,
+  // Output the old-style ":prop val" property syntax. Only meaningful when generating Sass.
+  "old": false,
+  // Custom environment PATH.
+  "path": "/Users/newtriks/.gem/ruby/2.1.2/bin:/Users/newtriks/.rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/bin:/Users/newtriks/.rubies/ruby-2.1.2/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/Users/newtriks/.node/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+  // Custom environment GEM_PATH.
+  "gemPath": "/Users/newtriks/.gem/ruby/2.1.2:/Users/newtriks/.rubies/ruby-2.1.2/lib/ruby/gems/2.1.0",
+  // Beautify the sass file after saving it?
+  "beautifyOnSave": false,
+  // Keep "inline" comments inline?
+  "inlineComments": false,
+  // Add a new line between selectors?
+  "newlineBetweenSelectors": false
 }
