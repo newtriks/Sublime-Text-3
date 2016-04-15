@@ -1,3 +1,4 @@
 {
-	"version": "setting no longer updated"
+  "default_browser": "chrome", //one of this list: firefox, chrome, chromium, opera, safari
+  "portable_browser": "~/Applications/\"Google Chrome.app\"" // for example:  C:/Program Files (x86)/Nightly/firefox.exe
 }
