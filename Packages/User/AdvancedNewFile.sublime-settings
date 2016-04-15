@@ -127,7 +127,8 @@
     // the form "Packages/User/mytest.sublime-snippet". If a string is used, or the list
     // contains a single entry, it will be automatically inserted into any newly created files.
     "file_templates": {
-        "js": "'use strict';\n\n"
+        "js": "",
+        "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"utf-8\">\n\t<title></title>\n</head>\n<body>\n\n</body>\n</html>"
         },
 
     // Setting this value to true will allow you to escape characters as you normally

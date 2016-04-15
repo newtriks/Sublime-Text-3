@@ -1,5 +1,6 @@
 {
 	"auto_upgrade_last_run": null,
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
@@ -7,12 +8,14 @@
 	[
 		"AdvancedNewFile",
 		"Babel",
+		"Babel Snippets",
 		"Base16 Color Schemes",
-		"BeautifyRuby",
 		"BracketHighlighter",
 		"DashDoc",
 		"EditorConfig",
+		"Elm Language Support",
 		"Emmet",
+		"Enhanced Clojure",
 		"FindKeyConflicts",
 		"Git",
 		"Glue",
@@ -21,10 +24,12 @@
 		"Jasmine JS",
 		"JavaScript & NodeJS Snippets",
 		"JsFormat",
-		"LESS",
 		"Markdown Preview",
+		"Material Theme",
+		"Material Theme - Appbar",
 		"NodeRequirer",
 		"Oceanic Next Color Scheme",
+		"Origami",
 		"Package Control",
 		"PackageResourceViewer",
 		"Sass",
